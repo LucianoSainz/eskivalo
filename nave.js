@@ -16,6 +16,7 @@ class Nave {
     this.setListeners();
   }
 
+  //pinta la imagen de la nave
   draw() {
     this.ctx.drawImage(
       this.image,
@@ -25,16 +26,8 @@ class Nave {
       200
     );
   }
-
-  //animate(framesCounter) {
-  //  if (framesCounter % 5 == 0) {
-  //  this.image.framesIndex++;
-  //}
-  //if (this.image.framesIndex > this.image.frames - 1) {
-  // this.image.framesIndex = 0;
-  //}
-  //}
   
+  //control de movimientos de la nave
   setListeners() {
     document.addEventListener("keydown", e => {
       switch (e.keyCode) {
