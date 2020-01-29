@@ -9,6 +9,9 @@ class Nave {
     this.posX = 0;
     this.posY = 0;
 
+    this.width = 50;
+    this.height = 50;
+
     this.keys = keys;
 
     this.velY = 1;
@@ -22,8 +25,8 @@ class Nave {
       this.image,
       this.posX,
       this.posY,
-      200,
-      200
+      this.width,
+      this.height
     );
   }
   
@@ -32,8 +35,11 @@ class Nave {
     document.addEventListener("keydown", e => {
       switch (e.keyCode) {
         case this.keys.UP:
-          if (this.posY >= this.posY) {
+          if (this.posY <= this.posY) {
             this.posY -= 40;
+            if(this.posY <= 0){
+              this.posY = 0
+            }
             this.velY -= 8;
             break;
           }
