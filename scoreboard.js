@@ -1,4 +1,23 @@
-const scoreBoard = {
+// const scoreBoard = {
+//     ctx = undefined,
+//     score = undefined,
+  
+    
+  
+//     init: function(ctx, score) {
+//       this.ctx = ctx;
+//       this.score = score;
+//     },
+  
+//     draw: function (score, gameWidth) {
+//       this.ctx.fillStyle = "white";
+//       this.ctx.font = "20px sans-serif"
+//       this.ctx.fillText(Math.floor(score), gameWidth - 10, 10);
+//     }
+
+//   }
+  
+  const scoreBoard = {
     ctx: undefined,
   
     init(ctx) {
@@ -8,7 +27,6 @@ const scoreBoard = {
   
     update(score) {
       this.ctx.fillStyle = "white";
-      console.log(Math.floor(score), "---");
-      this.ctx.fillText(Math.floor(score), 50, 50);
+      this.ctx.fillText(Math.floor(score),1100, 30);
     }
   };

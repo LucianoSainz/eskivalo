@@ -1,20 +1,69 @@
-/*
+body{
+    overflow: hidden;
+    background-color: #000;
+    
+
+}
 
 .eskivalo {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     font-family:'Bangers', cursive;
     font-size:50px;
+    color:#fff;
+    
+  
 }
 
 
-.start{
+#start-button{
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    padding:15px 30px;
+    background-color:#15a5ff;
+    color:#000;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 5px 5px 5px 5px #fff;
+
+       
 }
 
-//#start-button{}
+.list li {
+    font-size: 20px;
+}
+  
+.gameO {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content:center;
+    display:none;
+    background-color: #000;
+    flex-direction: column;
 
-*/
+
+}
+ h2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family:'Bangers', cursive;
+    font-size:90px;
+    color:#fff;
+
+}
+
+#try{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:15px 30px;
+    background-color:#15a5ff;
+    color:#000;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 2px 2px 2px 2px #fff;
+}

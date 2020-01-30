@@ -5,29 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.min.js"></script>
+  <script type="text/javascript" src="lives.js"></script>
   <script type="text/javascript" src="scoreboard.js"></script>
   <script type="text/javascript" src="obstacles.js"></script>
   <script type="text/javascript" src="nave.js"></script>
   <script type="text/javascript" src="bg.js"></script>
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="script.js"></script>
-
-  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="style.css">
   <title>Eskivalo</title>
 </head>
 
 <body>
   <div class ="eskivalo">
-    <h1>eskivalo-Game</h1>
-  <button id="start-button">StartGame</button>
+  <h1>eskivalo-Game</h1> 
+  <button id="start-button">Start</button>
+  <ol class="list">
+    <li>dodge obstacles</li>
+    <li>try to survive as long as possible</li>
+    <li>you have 3 lives</li>
+  </ol>
   </div>
   <div id="game-board">
   <canvas id="myGame">
-
     </canvas>
   </div>
+  <div class="gameO">
+    <h2>Game Over</h2>
+    <button id="try">try Again</button>
+  </div>
 </body>
-
 </html>

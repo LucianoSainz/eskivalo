@@ -5,6 +5,10 @@ window.onload = function () {
   
     };
     //game.init('myGame');
-  
+    document.getElementById("try").onclick = function () {
+      document.querySelector("#myGame").style.display = "flex";
+      document.querySelector(".gameO").style.display = "none";
+      game.init()
   
   };
+}

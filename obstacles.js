@@ -1,10 +1,10 @@
 class Obstacle {
     constructor(ctx, gameWidth, gameHeight) {
       this.ctx = ctx;
-      this.width = 30;
-      this.height = 30;
+      this.width = 40;
+      this.height = 140;
       this.image = new Image();
-      this.image.src = './images/fuego2.png';
+      this.image.src = './images/fuego.png';
       this.gameHeight = gameHeight;
       this.gameWidth = gameWidth;
 
@@ -37,8 +37,8 @@ class Obstacle {
     super(ctx, gameWidth, gameHeight)
     this.image = new Image();
     this.image.src = './images/satelite2.png';
-    this.width = 50;
-    this.height = 50;
+    this.width = 130;
+    this.height = 30;
     this.randomNummer = Math.floor(Math.random() * this.gameHeight) + 1;
     this.posX = this.gameWidth;
     this.posY = this.randomNummer;
