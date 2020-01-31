@@ -21,7 +21,7 @@ class Nave {
 
     this.bullets = [];
 
-    this.musicFour =  new Sound('./music/472095__claymorexx__08-disparo2.wav')
+    this.musicFour = new Sound('./music/472095__claymorexx__08-disparo2.wav')
 
     this.setListeners();
   }
@@ -37,7 +37,7 @@ class Nave {
     );
     this.bullets.forEach(bullet => bullet.draw());
   }
-  
+
   //control de movimientos de la nave y limites de pantalla para que la nave no sobresalga de ella
   setListeners() {
     document.addEventListener("keydown", e => {
@@ -48,28 +48,28 @@ class Nave {
             this.velY -= 8;
             break;
           }
-      case this.keys.DOWN:
-      if(this.posY + this.height <= this.gameH - this.height){
-        this.posY += 40;
-        this.velY += 8;
-        break;
-      }
-      case this.keys.RIGHT:
-      if(this.posX + this.width < this.gameW){
-        this.posX += 40;
-        this.velX += 8;
-        break;
-      }
-      case this.keys.LEFT:
-      if(this.posX > 0){
-        this.posX -= 40;
-        this.velX -= 8;
-        break;
-      }
-      case this.keys.SPACE:
-        console.log("DISPARANDO");
-        this.shoot();
-        break;
+        case this.keys.DOWN:
+          if (this.posY + this.height <= this.gameH - this.height) {
+            this.posY += 40;
+            this.velY += 8;
+            break;
+          }
+        case this.keys.RIGHT:
+          if (this.posX + this.width < this.gameW) {
+            this.posX += 40;
+            this.velX += 8;
+            break;
+          }
+        case this.keys.LEFT:
+          if (this.posX > 0) {
+            this.posX -= 40;
+            this.velX -= 8;
+            break;
+          }
+        case this.keys.SPACE:
+          console.log("DISPARANDO");
+          this.shoot();
+          break;
       }
     }
     );
