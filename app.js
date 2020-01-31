@@ -22,7 +22,8 @@ const game = {
     UP: 38,
     DOWN: 40,
     RIGHT: 39,
-    LEFT: 37
+    LEFT: 37,
+    SPACE: 32
   },
 
   lives: [],
@@ -33,10 +34,15 @@ const game = {
     this.ctx = this.canvas.getContext('2d')
     this.setDimensions();
     this.startGame();
+    this.music = new Sound('./music/por_1.mp3');
+    this.musicTwo = new Sound('./music/008846681_prev.mp3');
+    this.musicThree = new Sound('./music/james-brown-sex-machine (mp3cut.net) (1).mp3');
+    this.musicFive = new Sound('./music/448226__inspectorj__explosion-8-bit-01.wav')
+  
   },
 
   // dimensiones de ancho y  alto de la pantalla
-  setDimensions() {
+    setDimensions() {
     this.width = window.innerWidth;
     this.height = window.innerHeight;
     this.canvas.width = this.width;
@@ -45,30 +51,36 @@ const game = {
 
 
   startGame() {
-    this.reset()
-
+    this.reset();
+    
     this.interval = setInterval(() => {
       if (this.framesCounter > 5000) {
         this.framesCounter = 0;
+
       }
       this.framesCounter++;
       this.clear();
       this.drawAll();
       this.moveAll();
-  
+      this.music.play();
+
+    this.isBullletCollision()
     this.generateObstacles()
     this.clearObstacles();
     if (this.isCollision()) {
       console.log(this.lives)
       this.lives.pop();
+      this.musicTwo.play();
     }
     if (this.isCollisionTwo()) {
       console.log(this.lives)
       this.lives.pop();
+      this.musicTwo.play();
 
     }
     if (this.lives.length === 0) {
       this.gameOverF();
+      this.musicThree.play();
     }
     this.score += 0.01;
   }, 1000 / this.fpsCounter);
@@ -81,8 +93,9 @@ const game = {
     this.obstaclesTwo = [];
     scoreBoard.init(this.ctx);
     this.lives = [new Lives(this.ctx, 10), new Lives(this.ctx, 80), new Lives(this.ctx, 150)]
-    //this.gameOver = new GameOver(this.ctx, 400, 400);
     this.score = 0;
+    this.music = new Sound('./music/por_1.mp3', './music/008846681_prev.mp3', './music/james-brown-sex-machine (mp3cut.net) (1).mp3');
+    
   },
 
 
@@ -102,8 +115,8 @@ moveAll() {
   this.background.move();
   this.obstacles.forEach(obs => obs.move());
   this.obstaclesTwo.forEach(obs => obs.move())
-
-
+  this.nave.moveBullet();
+  
 },
 
 clear() {
@@ -140,11 +153,12 @@ isCollision() {
       this.nave.posX < obs.posX + obs.width &&
       this.nave.posY + this.nave.height > obs.posY
     ) {
+     
+     
       this.obstacles.splice(idx, 1);
       return true;
     }
   })
-
 },
 //colisiones satelites
 isCollisionTwo() {
@@ -155,6 +169,7 @@ isCollisionTwo() {
       this.nave.posX < obs.posX + obs.width &&
       this.nave.posY + this.nave.height > obs.posY
     ) {
+      
       this.obstaclesTwo.splice(idx, 1)
       return true;
     }
@@ -162,11 +177,32 @@ isCollisionTwo() {
 
 },
 
-// gameOverF() {
-// this.gameOver.draw();
-// clearInterval(this.interval);
-//this.gameOver.draw();
-//},
+isBullletCollision(){
+  this.nave.bullets.forEach(bullet =>
+    this.obstaclesTwo.forEach(obs => {
+      if (
+        bullet.posX + bullet.width > obs.posX &&
+      bullet.posY < obs.posY + obs.height &&
+      bullet.posX < obs.posX + obs.width &&
+      bullet.posY + bullet.height > obs.posY
+
+      ) {
+        this.score = this.score + 5;
+        obs.obsLives--;
+        
+        let index = this.obstaclesTwo.indexOf(obs);
+        if (index > -1 && obs.obsLives === 0) {
+          this.obstaclesTwo.splice(index, 1);
+          this.musicFive.play();
+        }
+        let index2 = this.nave.bullets.indexOf(bullet);
+        if (index2 > -1) {
+          this.nave.bullets.splice(index2, 1);
+        }
+      }
+    })
+  );
+},
 
 gameOverF(){
 

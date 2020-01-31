@@ -42,6 +42,7 @@ class Obstacle {
     this.randomNummer = Math.floor(Math.random() * this.gameHeight) + 1;
     this.posX = this.gameWidth;
     this.posY = this.randomNummer;
+    this.obsLives = 3;
    }
   
 

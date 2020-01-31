@@ -19,6 +19,10 @@ class Nave {
     this.gameW = gameW;
     this.gameH = gameH;
 
+    this.bullets = [];
+
+    this.musicFour =  new Sound('./music/472095__claymorexx__08-disparo2.wav')
+
     this.setListeners();
   }
 
@@ -31,6 +35,7 @@ class Nave {
       this.width,
       this.height
     );
+    this.bullets.forEach(bullet => bullet.draw());
   }
   
   //control de movimientos de la nave y limites de pantalla para que la nave no sobresalga de ella
@@ -61,7 +66,21 @@ class Nave {
         this.velX -= 8;
         break;
       }
+      case this.keys.SPACE:
+        console.log("DISPARANDO");
+        this.shoot();
+        break;
+      }
     }
-    });
+    );
+  }
+
+  shoot() {
+    this.bullets.push(new Bullets(this.ctx, this.posX, this.posY, this.width, this.height));
+    this.musicFour.play();
+  }
+
+  moveBullet() {
+    this.bullets.forEach(bullet => bullet.move())
   }
 }

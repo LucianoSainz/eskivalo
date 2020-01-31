@@ -26,7 +26,7 @@ body{
     background-color:#15a5ff;
     color:#000;
     border-radius: 20px 20px 20px 20px;
-    box-shadow: 5px 5px 5px 5px #fff;
+    box-shadow: 2px 2px 2px 2px #fff;
 
        
 }
@@ -66,4 +66,19 @@ body{
     color:#000;
     border-radius: 20px 20px 20px 20px;
     box-shadow: 2px 2px 2px 2px #fff;
+    margin-bottom: 200px;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+p{
+    color:#fff;
+    font-size: 15px;
 }
