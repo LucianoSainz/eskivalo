@@ -8,27 +8,6 @@ The game is called **Eskivalo**, it is a spaceship that must avoid obstacles suc
 ![screencapture-file-home-luciano-eskivalo-index-html-2020-01-31-12_27_07](https://user-images.githubusercontent.com/17044301/73544598-cf4d5d80-4439-11ea-8a90-65ece4c1d5bf.png)
 
 
-
-## Create files and folders :
-
- 
-**Files**
- - index.html
- - bg.js
- - app.js
- - nave.js
- - obstacles.js
- - lives.js
- - bullets.js
- - scoreboard.js
- - music.js
- - script.js
- -styles.css
- 
-**Folders**
- - images
- - music
-
 ## Photos :
 ![screencapture-file-home-luciano-eskivalo-index-html-2020-01-31-12_26_27](https://user-images.githubusercontent.com/17044301/73544754-2a7f5000-443a-11ea-8fbe-94997a3a0e04.png)
 
