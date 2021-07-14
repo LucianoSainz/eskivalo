@@ -1,7 +1,7 @@
 # welcome to my project done for ironhack
 I had to create a project of a game made with canvas, HTML, CSS, Javascript, within a week that I had to present in ironhack.
 
-![enter image description here](https://pbs.twimg.com/profile_images/1027107018904150016/_LSCoA74.jpg)
+
 
 # Game :
 The game is called **Eskivalo**, it is a spaceship that must avoid obstacles such as meteorites and shoot satellites & add points, trying not to destroy our ship.
